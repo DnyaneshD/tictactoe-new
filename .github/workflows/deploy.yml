@@ -37,7 +37,7 @@ jobs:
         with:
           ref: ${{ github.ref }}
           running-workflow-name: deploy
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.REPO_TOKEN }}
           wait-interval: 20 # seconds
 
       - name: Push new release to S3
