@@ -1,7 +1,28 @@
 .border-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
   background-color: #2196f3;
   gap: 5px;
+}
+
+.result-wrapper {
+  margin-left: 10px;
+  font-size: 24px;
+}
+
+.large-font {
+  font-size: 48px;
+}
+
+.result-color {
+  color: forestgreen;
+}
+
+.next-move-color {
+  color: #2196f3;
+}
+
+.reset-button {
+  font-size: 30px;
+  margin-top: 12px;
 }

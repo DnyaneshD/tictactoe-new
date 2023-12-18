@@ -3,6 +3,6 @@ import Box from "./Box";
 
 describe("Box component", () => {
   it("should render without fail", () => {
-    render(<Box />);
+    render(<Box id={1} state={"x"} handleBoxClick={(id) => {}} />);
   });
 });
