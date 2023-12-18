@@ -15,7 +15,7 @@ const Box = ({
       className="box"
       onClick={() => handleBoxClick(id)}
     >
-      {state}
+      {state ? state : " "}
     </div>
   );
 };

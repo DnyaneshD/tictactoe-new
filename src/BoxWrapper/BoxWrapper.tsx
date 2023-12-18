@@ -57,7 +57,10 @@ const BoxWrapper = ({ nextUser = "x" }: { nextUser?: "x" | "o" }) => {
           </span>
         </div>
         <div>
-          Winner is <span className="large-font result-color">{winner}</span>
+          Winner is{" "}
+          <span data-testid="winner-player" className="large-font result-color">
+            {winner}
+          </span>
         </div>
         <button className="reset-button" onClick={handleRestart}>
           Restart
