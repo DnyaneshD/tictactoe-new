@@ -10,7 +10,11 @@ const Box = ({
   handleBoxClick: (id: number) => void;
 }) => {
   return (
-    <div className="box" onClick={() => handleBoxClick(id)}>
+    <div
+      data-testid={`box-${id}`}
+      className="box"
+      onClick={() => handleBoxClick(id)}
+    >
       {state}
     </div>
   );

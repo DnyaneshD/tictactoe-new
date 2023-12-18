@@ -3,8 +3,8 @@ import Box from "../Box/Box";
 import "./BoxWrapper.css";
 import checkWinner from "../Rules";
 
-const BoxWrapper = () => {
-  const [currentPlayer, setCurrePlayer] = useState<"x" | "o">("x");
+const BoxWrapper = ({ nextUser = "x" }: { nextUser?: "x" | "o" }) => {
+  const [currentPlayer, setCurrePlayer] = useState<"x" | "o">(nextUser);
   const [winner, setWinner] = useState<"x" | "o" | null>(null);
   const [boardState, setBoardState] = useState(Array(9).fill(null));
 
@@ -17,7 +17,6 @@ const BoxWrapper = () => {
       if (id === index) {
         return currentPlayer;
       }
-
       return boxState;
     });
 
@@ -49,8 +48,13 @@ const BoxWrapper = () => {
       </div>
       <div className="result-wrapper">
         <div>
-          Next Play is{" "}
-          <span className="large-font next-move-color">{currentPlayer}</span>
+          Next Player is{" "}
+          <span
+            data-testid="next-player"
+            className="large-font next-move-color"
+          >
+            {currentPlayer}
+          </span>
         </div>
         <div>
           Winner is <span className="large-font result-color">{winner}</span>
