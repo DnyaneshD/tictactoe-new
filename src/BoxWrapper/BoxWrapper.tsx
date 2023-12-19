@@ -9,7 +9,7 @@ const BoxWrapper = ({ nextUser = "x" }: { nextUser?: "x" | "o" }) => {
   const [boardState, setBoardState] = useState(Array(9).fill(null));
 
   function handleBoxClick(id: number) {
-    if (winner) {
+    if (winner || boardState[id]) {
       return;
     }
 
