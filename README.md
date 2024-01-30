@@ -28,4 +28,4 @@ This project is deployed to S3 bucket. Visit http://tittactoe-new-1.s3-website.e
 
 ## Future
 
-Add functionality to pay with computer.
+Add functionality to play with computer.
