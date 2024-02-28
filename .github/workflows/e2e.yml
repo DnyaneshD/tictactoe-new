@@ -15,8 +15,7 @@ jobs:
           project: ./site
           browser: chrome
           build: yarn build
-          command: npm run cy:run
-          start: npm run start
+          start: yarn start
           wait-on: "http://localhost:3000"
         env:
           COMMERCE_PROVIDER: "http://localhost:3000"
