@@ -17,4 +17,4 @@ jobs:
           start: yarn start
           wait-on: "http://localhost:3000"
         env:
-          COMMERCE_PROVIDER: "http://localhost:3000"
+          CYPRESS_COMMERCE_PROVIDER: "http://localhost:3000"
