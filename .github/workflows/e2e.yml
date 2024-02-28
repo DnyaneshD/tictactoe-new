@@ -1,31 +1,22 @@
-name: Integration Tests
+name: E2E on Chrome
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  integration_tests:
+  install:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      # The step below prevents frontend throwing error about watchers
-      - name: Increase max_user_watches
-        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-
-      - name: Integration Tests
-        uses: cypress-io/github-action@v2
-        env:
-          CYPRESS_BASE_URL: "http://localhost:3000"
+      - name: Cypress run
+        uses: cypress-io/github-action@v3
         with:
-          group: "Integration Tests"
-          config-file: /cypress/integration.json
+          project: ./site
+          browser: chrome
+          build: yarn build
           command: npm run cy:run
           start: npm run start
           wait-on: "http://localhost:3000"
-          wait-on-timeout: 320
-          parallel: true
-          env: true
+        env:
+          COMMERCE_PROVIDER: "http://localhost:3000"
