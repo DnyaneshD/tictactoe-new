@@ -2,7 +2,7 @@
 
 describe("template spec", () => {
   it("passes", () => {
-    cy.visit("http://localhost:3000");
+    cy.visit(Cypress.env("BASE_URL"));
   });
 
   it("on selecting right boxes X player should be winner", () => {

@@ -27,3 +27,5 @@ jobs:
           wait-on: "http://localhost:3000"
           wait-on-timeout: 320
           parallel: true
+        env:
+          BASE_URL: "http://localhost:3000"
